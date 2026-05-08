@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillSync Dashboard – View your career predictions, skill analytics, and progress tracking.">
+  <title>SkillSync – Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="spinner-overlay" id="spinnerOverlay">
+    <div class="spinner"></div>
+    <p class="spinner-text">Loading your dashboard...</p>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="nav-logo"><span class="logo-icon">⚡</span><span class="logo-text">Skill<span class="text-gradient">Sync</span></span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-section="overview"><span class="nav-icon">📊</span>Overview</a>
+        <a href="#" class="nav-item" data-section="predictions"><span class="nav-icon">🎯</span>Predictions</a>
+        <a href="#" class="nav-item" data-section="history"><span class="nav-icon">📜</span>History</a>
+        <a href="pages/assessment.html" class="nav-item"><span class="nav-icon">📝</span>New Assessment</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="btn btn-sm logout-btn" id="logoutBtn">🚪 Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Top Bar -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="mobile-sidebar-btn" id="mobileSidebarBtn">☰</button>
+          <div>
+            <h1 class="welcome-text">Welcome back, <span id="userName">User</span> 👋</h1>
+            <p class="welcome-sub">Here's your career intelligence overview</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <a href="pages/assessment.html" class="btn btn-primary btn-sm">+ New Assessment</a>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <!-- Overview Section -->
+        <section class="dash-section active" id="sectionOverview">
+          <!-- Stats Cards -->
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-card-icon" style="background: linear-gradient(135deg, #4F46E5, #6366F1);">🎯</div><div class="stat-card-info"><span class="stat-card-value" id="topRoleDisplay">—</span><span class="stat-card-label">Top Career Match</span></div></div>
+            <div class="stat-card"><div class="stat-card-icon" style="background: linear-gradient(135deg, #10B981, #34D399);">📈</div><div class="stat-card-info"><span class="stat-card-value" id="confidenceDisplay">—%</span><span class="stat-card-label">Confidence Score</span></div></div>
+            <div class="stat-card"><div class="stat-card-icon" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6);">🧠</div><div class="stat-card-info"><span class="stat-card-value" id="skillCountDisplay">0</span><span class="stat-card-label">Skills Assessed</span></div></div>
+            <div class="stat-card"><div class="stat-card-icon" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);">📊</div><div class="stat-card-info"><span class="stat-card-value" id="assessmentCountDisplay">0</span><span class="stat-card-label">Assessments Done</span></div></div>
+          </div>
+
+          <!-- Charts Row -->
+          <div class="charts-row">
+            <div class="chart-card">
+              <h3>Skill Distribution</h3>
+              <div class="chart-wrapper"><canvas id="skillPieChart"></canvas></div>
+            </div>
+            <div class="chart-card">
+              <h3>Career Match Scores</h3>
+              <div class="chart-wrapper"><canvas id="careerBarChart"></canvas></div>
+            </div>
+          </div>
+
+          <!-- No Data State -->
+          <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-icon">📝</div>
+            <h3>No Assessments Yet</h3>
+            <p>Complete your first skill assessment to see your career predictions and analytics.</p>
+            <a href="pages/assessment.html" class="btn btn-primary">Take Assessment Now</a>
+          </div>
+        </section>
+
+        <!-- Predictions Section -->
+        <section class="dash-section" id="sectionPredictions">
+          <h2 class="section-heading">Career Predictions</h2>
+          <div class="predictions-grid" id="predictionsGrid">
+            <div class="empty-state"><div class="empty-icon">🎯</div><h3>No Predictions Yet</h3><p>Complete an assessment to see your career matches.</p><a href="pages/assessment.html" class="btn btn-primary">Take Assessment</a></div>
+          </div>
+          <!-- Roadmap -->
+          <div class="roadmap-section" id="roadmapSection" style="display: none;">
+            <h2 class="section-heading">Your Learning Roadmap</h2>
+            <div class="roadmap-timeline" id="roadmapTimeline"></div>
+          </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="dash-section" id="sectionHistory">
+          <h2 class="section-heading">Assessment History</h2>
+          <div class="history-list" id="historyList">
+            <div class="empty-state"><div class="empty-icon">📜</div><h3>No History Yet</h3><p>Your past assessments will appear here.</p></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

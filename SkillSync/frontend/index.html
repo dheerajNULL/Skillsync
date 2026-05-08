@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillSync – Intelligent Career Roadmap Web-App. Get ML-based career recommendations, skill assessments, and personalized learning roadmaps.">
+  <title>SkillSync – Intelligent Career Roadmap</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Skill<span class="text-gradient">Sync</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="pages/auth.html" class="btn btn-outline btn-sm" id="loginBtn">Log In</a>
+        <a href="pages/auth.html?mode=signup" class="btn btn-primary btn-sm" id="signupBtn">Sign Up Free</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-effects">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge animate-fade-in-up">
+        <span class="badge-dot"></span>
+        AI-Powered Career Intelligence
+      </div>
+      <h1 class="hero-title animate-fade-in-up delay-1">
+        Discover Your <span class="text-gradient">Perfect Career</span> Path
+      </h1>
+      <p class="hero-subtitle animate-fade-in-up delay-2">
+        SkillSync uses intelligent algorithms to analyze your skills and interests, delivering personalized career recommendations with confidence scores and learning roadmaps.
+      </p>
+      <div class="hero-cta animate-fade-in-up delay-3">
+        <a href="pages/auth.html?mode=signup" class="btn btn-primary btn-lg">
+          🚀 Get Started Free
+        </a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">
+          Learn More →
+        </a>
+      </div>
+      <div class="hero-stats animate-fade-in-up delay-4">
+        <div class="stat"><span class="stat-number">8+</span><span class="stat-label">Career Paths</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">15+</span><span class="stat-label">Skills Tracked</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">95%</span><span class="stat-label">Accuracy</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Features</span>
+        <h2 class="section-title">Everything You Need to <span class="text-gradient">Plan Your Career</span></h2>
+        <p class="section-subtitle">Powerful tools designed to help you understand your strengths and find the perfect career match.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #4F46E5, #6366F1);">🧠</div>
+          <h3>ML-Powered Analysis</h3>
+          <p>Our intelligent algorithm analyzes your technical and soft skills to generate accurate career predictions.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6);">📊</div>
+          <h3>Visual Dashboard</h3>
+          <p>Interactive charts and analytics to visualize your skill distribution and career match percentages.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #06B6D4, #22D3EE);">🗺️</div>
+          <h3>Career Roadmaps</h3>
+          <p>Get step-by-step learning paths with recommended technologies and skills for your target career.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #34D399);">📈</div>
+          <h3>Progress Tracking</h3>
+          <p>Save prediction history and track how your career prospects evolve as you learn new skills.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);">🔒</div>
+          <h3>Secure & Private</h3>
+          <p>JWT authentication, encrypted passwords, and protected APIs keep your data safe and private.</p>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #F43F5E, #FB7185);">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Get career recommendations in seconds with our optimized recommendation engine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">How It Works</span>
+        <h2 class="section-title">Three Simple Steps to Your <span class="text-gradient">Dream Career</span></h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Assess Your Skills</h3>
+            <p>Complete our interactive multi-step assessment covering your technical skills, soft skills, and career interests.</p>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Get AI Predictions</h3>
+            <p>Our ML engine analyzes your profile against 8+ career paths and returns your top 3 matches with confidence scores.</p>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Follow Your Roadmap</h3>
+            <p>View personalized learning roadmaps, track progress on your dashboard, and watch your career grow over time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <span class="section-badge">About SkillSync</span>
+          <h2 class="section-title">Built for Students Who Want to <span class="text-gradient">Stand Out</span></h2>
+          <p>SkillSync is an intelligent career recommendation platform that bridges the gap between your current skills and your dream career. Using advanced weighted scoring algorithms, we match your unique skill profile against real-world career requirements.</p>
+          <p>Whether you're a coding bootcamp graduate, a university student, or a career changer, SkillSync gives you the clarity and direction you need to succeed in tech.</p>
+          <a href="pages/auth.html?mode=signup" class="btn btn-primary btn-lg">Start Your Journey →</a>
+        </div>
+        <div class="about-visual">
+          <div class="about-card glass-card">
+            <div class="about-card-icon">🎯</div>
+            <h4>Precision Matching</h4>
+            <p>Weighted scoring across 8+ career profiles</p>
+          </div>
+          <div class="about-card glass-card">
+            <div class="about-card-icon">📱</div>
+            <h4>Responsive Design</h4>
+            <p>Works perfectly on all devices</p>
+          </div>
+          <div class="about-card glass-card">
+            <div class="about-card-icon">🔐</div>
+            <h4>Enterprise Security</h4>
+            <p>JWT auth with bcrypt encryption</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <h2>Ready to Discover Your Career Path?</h2>
+        <p>Join SkillSync today and get personalized, ML-powered career recommendations in minutes.</p>
+        <div class="cta-buttons">
+          <a href="pages/auth.html?mode=signup" class="btn btn-primary btn-lg">Create Free Account</a>
+          <a href="pages/auth.html" class="btn btn-outline btn-lg">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="nav-logo"><span class="logo-icon">⚡</span><span class="logo-text">Skill<span class="text-gradient">Sync</span></span></div>
+          <p>Intelligent career recommendations powered by machine learning.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="pages/auth.html?mode=signup">Get Started</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#about">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SkillSync. All rights reserved. Built with ❤️ for students.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillSync – Complete your skill assessment to receive personalized career recommendations.">
+  <title>SkillSync – Skill Assessment</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/assessment.css">
+</head>
+<body>
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="spinner-overlay" id="spinnerOverlay">
+    <div class="spinner"></div>
+    <p class="spinner-text">Analyzing your skills with AI...</p>
+  </div>
+
+  <div class="assessment-page">
+    <!-- Header -->
+    <header class="assessment-header">
+      <div class="container header-content">
+        <a href="../dashboard.html" class="back-link">← Back to Dashboard</a>
+        <div class="nav-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Skill<span class="text-gradient">Sync</span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-section">
+      <div class="container">
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 33.33%"></div>
+          </div>
+          <div class="progress-steps">
+            <div class="progress-step active" data-step="1"><span class="step-num">1</span><span class="step-label">Technical</span></div>
+            <div class="progress-step" data-step="2"><span class="step-num">2</span><span class="step-label">Soft Skills</span></div>
+            <div class="progress-step" data-step="3"><span class="step-num">3</span><span class="step-label">Interests</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assessment Form -->
+    <main class="assessment-main">
+      <div class="container">
+        <form id="assessmentForm">
+          <!-- Step 1: Technical Skills -->
+          <div class="form-step active" id="step1">
+            <div class="step-header">
+              <span class="step-badge">Step 1 of 3</span>
+              <h2>Select Your Technical Skills</h2>
+              <p>Choose all the technical skills you have experience with.</p>
+            </div>
+            <div class="skills-grid" id="technicalSkillsGrid">
+              <label class="skill-chip"><input type="checkbox" name="technical" value="JavaScript"><span class="chip-content"><span class="chip-icon">🟨</span>JavaScript</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="Python"><span class="chip-content"><span class="chip-icon">🐍</span>Python</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="React"><span class="chip-content"><span class="chip-icon">⚛️</span>React</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="Node.js"><span class="chip-content"><span class="chip-icon">🟩</span>Node.js</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="SQL"><span class="chip-content"><span class="chip-icon">🗃️</span>SQL</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="Machine Learning"><span class="chip-content"><span class="chip-icon">🤖</span>Machine Learning</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="HTML/CSS"><span class="chip-content"><span class="chip-icon">🌐</span>HTML/CSS</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="Docker"><span class="chip-content"><span class="chip-icon">🐳</span>Docker</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="TypeScript"><span class="chip-content"><span class="chip-icon">🔷</span>TypeScript</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="MongoDB"><span class="chip-content"><span class="chip-icon">🍃</span>MongoDB</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="AWS"><span class="chip-content"><span class="chip-icon">☁️</span>AWS</span></label>
+              <label class="skill-chip"><input type="checkbox" name="technical" value="TensorFlow"><span class="chip-content"><span class="chip-icon">🧠</span>TensorFlow</span></label>
+            </div>
+            <p class="validation-msg" id="step1Error"></p>
+          </div>
+
+          <!-- Step 2: Soft Skills -->
+          <div class="form-step" id="step2">
+            <div class="step-header">
+              <span class="step-badge">Step 2 of 3</span>
+              <h2>Select Your Soft Skills</h2>
+              <p>Choose the soft skills that best describe you.</p>
+            </div>
+            <div class="skills-grid" id="softSkillsGrid">
+              <label class="skill-chip soft"><input type="checkbox" name="soft" value="Communication"><span class="chip-content"><span class="chip-icon">💬</span>Communication</span></label>
+              <label class="skill-chip soft"><input type="checkbox" name="soft" value="Leadership"><span class="chip-content"><span class="chip-icon">👑</span>Leadership</span></label>
+              <label class="skill-chip soft"><input type="checkbox" name="soft" value="Problem Solving"><span class="chip-content"><span class="chip-icon">🧩</span>Problem Solving</span></label>
+              <label class="skill-chip soft"><input type="checkbox" name="soft" value="Teamwork"><span class="chip-content"><span class="chip-icon">🤝</span>Teamwork</span></label>
+              <label class="skill-chip soft"><input type="checkbox" name="soft" value="Creativity"><span class="chip-content"><span class="chip-icon">🎨</span>Creativity</span></label>
+              <label class="skill-chip soft"><input type="checkbox" name="soft" value="Critical Thinking"><span class="chip-content"><span class="chip-icon">🔍</span>Critical Thinking</span></label>
+            </div>
+            <p class="validation-msg" id="step2Error"></p>
+          </div>
+
+          <!-- Step 3: Interests -->
+          <div class="form-step" id="step3">
+            <div class="step-header">
+              <span class="step-badge">Step 3 of 3</span>
+              <h2>Choose Your Interest Area</h2>
+              <p>Select the career area that excites you the most.</p>
+            </div>
+            <div class="interests-grid" id="interestsGrid">
+              <label class="interest-card"><input type="radio" name="interest" value="Web Development"><span class="interest-content"><span class="interest-icon">🌐</span><span class="interest-name">Web Development</span><span class="interest-desc">Build websites and web apps</span></span></label>
+              <label class="interest-card"><input type="radio" name="interest" value="Data Science"><span class="interest-content"><span class="interest-icon">📊</span><span class="interest-name">Data Science</span><span class="interest-desc">Analyze data and find insights</span></span></label>
+              <label class="interest-card"><input type="radio" name="interest" value="DevOps"><span class="interest-content"><span class="interest-icon">⚙️</span><span class="interest-name">DevOps</span><span class="interest-desc">Automate and deploy systems</span></span></label>
+              <label class="interest-card"><input type="radio" name="interest" value="UI/UX"><span class="interest-content"><span class="interest-icon">🎨</span><span class="interest-name">UI/UX Design</span><span class="interest-desc">Design beautiful interfaces</span></span></label>
+              <label class="interest-card"><input type="radio" name="interest" value="Cybersecurity"><span class="interest-content"><span class="interest-icon">🔐</span><span class="interest-name">Cybersecurity</span><span class="interest-desc">Protect systems and data</span></span></label>
+              <label class="interest-card"><input type="radio" name="interest" value="Machine Learning"><span class="interest-content"><span class="interest-icon">🤖</span><span class="interest-name">Machine Learning</span><span class="interest-desc">Build intelligent systems</span></span></label>
+            </div>
+            <p class="validation-msg" id="step3Error"></p>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="form-navigation">
+            <button type="button" class="btn btn-outline nav-btn" id="prevBtn" style="visibility: hidden; border-color: rgba(0,0,0,0.2); color: var(--text-primary);">← Previous</button>
+            <button type="button" class="btn btn-primary nav-btn" id="nextBtn">Next Step →</button>
+            <button type="submit" class="btn btn-primary nav-btn btn-lg" id="submitBtn" style="display: none;">🚀 Get Career Predictions</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/assessment.js"></script>
+</body>
+</html>

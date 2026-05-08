@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillSync – Sign in or create your account to start your career journey.">
+  <title>SkillSync – Sign In</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="spinner-overlay" id="spinnerOverlay">
+    <div class="spinner"></div>
+    <p class="spinner-text">Authenticating...</p>
+  </div>
+
+  <div class="auth-page">
+    <!-- Left panel — branding -->
+    <div class="auth-brand">
+      <div class="auth-brand-content">
+        <a href="../index.html" class="nav-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Skill<span class="text-gradient">Sync</span></span>
+        </a>
+        <h2>Start Your Career Journey</h2>
+        <p>Get ML-powered career recommendations, personalized learning roadmaps, and track your growth over time.</p>
+        <div class="brand-features">
+          <div class="brand-feature"><span class="brand-check">✓</span> AI Career Matching</div>
+          <div class="brand-feature"><span class="brand-check">✓</span> Skill Assessment</div>
+          <div class="brand-feature"><span class="brand-check">✓</span> Progress Tracking</div>
+          <div class="brand-feature"><span class="brand-check">✓</span> Learning Roadmaps</div>
+        </div>
+      </div>
+      <div class="auth-brand-orb auth-brand-orb-1"></div>
+      <div class="auth-brand-orb auth-brand-orb-2"></div>
+    </div>
+
+    <!-- Right panel — form -->
+    <div class="auth-form-panel">
+      <div class="auth-form-container">
+        <!-- Tab Toggle -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="loginTab" data-tab="login">Sign In</button>
+          <button class="auth-tab" id="signupTab" data-tab="signup">Sign Up</button>
+          <div class="auth-tab-indicator" id="tabIndicator"></div>
+        </div>
+
+        <!-- Login Form -->
+        <form class="auth-form active" id="loginForm">
+          <h3>Welcome Back</h3>
+          <p class="form-subtitle">Sign in to access your dashboard</p>
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📧</span>
+              <input type="email" id="loginEmail" placeholder="you@example.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password">
+              <button type="button" class="toggle-password" data-target="loginPassword" aria-label="Toggle password visibility">👁️</button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg auth-submit-btn" id="loginSubmit">Sign In</button>
+          <p class="auth-switch">Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+        </form>
+
+        <!-- Signup Form -->
+        <form class="auth-form" id="signupForm">
+          <h3>Create Account</h3>
+          <p class="form-subtitle">Join SkillSync and discover your career path</p>
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input type="text" id="signupName" placeholder="John Doe" required autocomplete="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📧</span>
+              <input type="email" id="signupEmail" placeholder="you@example.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signupMajor">Major / Field of Study</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🎓</span>
+              <input type="text" id="signupMajor" placeholder="Computer Science" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="signupPassword" placeholder="Min 6 characters" required minlength="6" autocomplete="new-password">
+              <button type="button" class="toggle-password" data-target="signupPassword" aria-label="Toggle password visibility">👁️</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signupConfirm">Confirm Password</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="signupConfirm" placeholder="Confirm your password" required minlength="6" autocomplete="new-password">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg auth-submit-btn" id="signupSubmit">Create Account</button>
+          <p class="auth-switch">Already have an account? <a href="#" id="switchToLogin">Sign In</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

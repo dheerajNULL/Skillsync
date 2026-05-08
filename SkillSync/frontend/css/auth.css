@@ -1,0 +1,56 @@
+/* ============================================================
+   SkillSync – Auth Page Styles
+   ============================================================ */
+.auth-page { display: flex; min-height: 100vh; }
+
+/* Brand Panel */
+.auth-brand { flex: 1; background: var(--gradient-hero); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 3rem; }
+.auth-brand-content { position: relative; z-index: 2; color: var(--text-white); max-width: 420px; }
+.auth-brand .nav-logo { font-size: 1.6rem; margin-bottom: 2rem; display: inline-flex; }
+.auth-brand h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
+.auth-brand p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem; }
+.brand-features { display: flex; flex-direction: column; gap: 0.75rem; }
+.brand-feature { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.8); font-weight: 500; }
+.brand-check { color: var(--accent-emerald); font-size: 1.1rem; }
+.auth-brand-orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; }
+.auth-brand-orb-1 { width: 300px; height: 300px; background: var(--primary); top: -10%; right: -10%; animation: float 6s ease-in-out infinite; }
+.auth-brand-orb-2 { width: 250px; height: 250px; background: var(--secondary); bottom: -10%; left: -5%; animation: float 8s ease-in-out infinite reverse; }
+
+/* Form Panel */
+.auth-form-panel { flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem; background: var(--bg-secondary); }
+.auth-form-container { width: 100%; max-width: 440px; }
+
+/* Tabs */
+.auth-tabs { display: flex; position: relative; background: var(--bg-primary); border-radius: var(--radius-full); padding: 4px; margin-bottom: 2rem; }
+.auth-tab { flex: 1; padding: 12px; text-align: center; font-weight: 600; font-size: 0.95rem; color: var(--text-secondary); background: none; border-radius: var(--radius-full); transition: all var(--transition-normal); z-index: 1; }
+.auth-tab.active { color: var(--text-white); }
+.auth-tab-indicator { position: absolute; top: 4px; left: 4px; width: calc(50% - 4px); height: calc(100% - 8px); background: var(--gradient-primary); border-radius: var(--radius-full); transition: transform var(--transition-normal); }
+.auth-tab-indicator.right { transform: translateX(100%); }
+
+/* Forms */
+.auth-form { display: none; }
+.auth-form.active { display: block; animation: fadeInUp 0.4s ease; }
+.auth-form h3 { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.5rem; }
+.form-subtitle { color: var(--text-secondary); margin-bottom: 1.75rem; font-size: 0.95rem; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; font-weight: 600; font-size: 0.85rem; color: var(--text-primary); margin-bottom: 0.5rem; }
+.input-wrapper { position: relative; display: flex; align-items: center; }
+.input-icon { position: absolute; left: 14px; font-size: 1rem; z-index: 1; }
+.input-wrapper input { width: 100%; padding: 14px 14px 14px 44px; border: 2px solid rgba(0,0,0,0.08); border-radius: var(--radius-md); font-size: 0.95rem; background: var(--bg-primary); color: var(--text-primary); transition: all var(--transition-normal); }
+.input-wrapper input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); background: var(--bg-secondary); }
+.input-wrapper input::placeholder { color: var(--text-muted); }
+.toggle-password { position: absolute; right: 14px; background: none; font-size: 1rem; padding: 4px; opacity: 0.6; transition: opacity var(--transition-fast); }
+.toggle-password:hover { opacity: 1; }
+.auth-submit-btn { width: 100%; margin-top: 0.5rem; }
+.auth-switch { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary); }
+.auth-switch a { color: var(--primary); font-weight: 600; }
+.auth-switch a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-page { flex-direction: column; }
+  .auth-brand { min-height: 280px; padding: 2rem; }
+  .auth-brand h2 { font-size: 1.6rem; }
+  .brand-features { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+  .auth-form-panel { padding: 1.5rem; }
+}

@@ -1,0 +1,74 @@
+/* ============================================================
+   SkillSync – Assessment Page Styles
+   ============================================================ */
+.assessment-page { min-height: 100vh; background: var(--bg-primary); }
+
+/* Header */
+.assessment-header { background: var(--bg-dark); padding: 1rem 0; }
+.header-content { display: flex; align-items: center; justify-content: space-between; }
+.back-link { color: rgba(255,255,255,0.6); font-size: 0.9rem; font-weight: 500; transition: color var(--transition-fast); }
+.back-link:hover { color: var(--text-white); }
+.assessment-header .nav-logo { font-size: 1.2rem; }
+
+/* Progress */
+.progress-section { background: var(--bg-secondary); padding: 2rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.progress-bar-wrapper { max-width: 600px; margin: 0 auto; }
+.progress-bar { height: 6px; background: rgba(0,0,0,0.08); border-radius: var(--radius-full); overflow: hidden; margin-bottom: 1.5rem; }
+.progress-fill { height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.progress-steps { display: flex; justify-content: space-between; }
+.progress-step { display: flex; align-items: center; gap: 0.5rem; opacity: 0.4; transition: all var(--transition-normal); }
+.progress-step.active { opacity: 1; }
+.progress-step.completed { opacity: 0.7; }
+.step-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; color: var(--text-secondary); transition: all var(--transition-normal); }
+.progress-step.active .step-num { background: var(--gradient-primary); color: var(--text-white); }
+.progress-step.completed .step-num { background: var(--accent-emerald); color: var(--text-white); }
+.step-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); }
+
+/* Form Steps */
+.assessment-main { padding: 3rem 0; }
+.form-step { display: none; max-width: 700px; margin: 0 auto; animation: fadeInUp 0.4s ease; }
+.form-step.active { display: block; }
+.step-header { text-align: center; margin-bottom: 2rem; }
+.step-badge { display: inline-block; padding: 4px 14px; border-radius: var(--radius-full); background: rgba(79, 70, 229, 0.1); color: var(--primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+.step-header h2 { font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.5rem; }
+.step-header p { color: var(--text-secondary); }
+
+/* Skill Chips */
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.skill-chip { cursor: pointer; position: relative; }
+.skill-chip input { display: none; }
+.chip-content { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 2px solid rgba(0,0,0,0.08); background: var(--bg-secondary); transition: all var(--transition-normal); font-weight: 500; color: var(--text-primary); }
+.chip-icon { font-size: 1.3rem; }
+.skill-chip input:checked + .chip-content { border-color: var(--primary); background: rgba(79, 70, 229, 0.06); color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08); }
+.skill-chip:hover .chip-content { border-color: rgba(79, 70, 229, 0.3); transform: translateY(-2px); }
+.skill-chip.soft input:checked + .chip-content { border-color: var(--secondary); background: rgba(124, 58, 237, 0.06); color: var(--secondary-dark); box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.08); }
+
+/* Interest Cards */
+.interests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.interest-card { cursor: pointer; }
+.interest-card input { display: none; }
+.interest-content { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.75rem 1rem; border-radius: var(--radius-lg); border: 2px solid rgba(0,0,0,0.08); background: var(--bg-secondary); transition: all var(--transition-normal); }
+.interest-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.interest-name { font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem; }
+.interest-desc { font-size: 0.8rem; color: var(--text-muted); }
+.interest-card input:checked + .interest-content { border-color: var(--primary); background: rgba(79, 70, 229, 0.06); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1), var(--shadow-md); transform: translateY(-4px); }
+.interest-card:hover .interest-content { border-color: rgba(79, 70, 229, 0.3); transform: translateY(-2px); }
+
+/* Validation */
+.validation-msg { color: var(--accent-rose); font-size: 0.85rem; text-align: center; margin-top: 1rem; font-weight: 500; min-height: 1.25rem; }
+
+/* Navigation */
+.form-navigation { display: flex; justify-content: space-between; max-width: 700px; margin: 2.5rem auto 0; }
+.nav-btn { min-width: 160px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .interests-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-header h2 { font-size: 1.4rem; }
+}
+@media (max-width: 480px) {
+  .skills-grid, .interests-grid { grid-template-columns: 1fr; }
+  .form-navigation { flex-direction: column; gap: 1rem; }
+  .nav-btn { min-width: auto; width: 100%; }
+}
