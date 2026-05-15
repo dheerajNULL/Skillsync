@@ -3,7 +3,7 @@
  * Centralized Fetch API wrapper with JWT token handling
  */
 
-const API_BASE = 'http://localhost:5001/api';
+const API_BASE = 'https://skillsync-dizx.onrender.com/api';
 
 /**
  * Get stored JWT token from localStorage
